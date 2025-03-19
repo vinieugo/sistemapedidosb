@@ -1,0 +1,9 @@
+@echo off
+echo Adicionando arquivos PowerShell ao Git...
+git add instalar_powershell.ps1 INSTRUCOES_POWERSHELL.txt
+echo Criando commit...
+git commit -m "Adiciona scripts de instalacao PowerShell para Windows Server"
+echo Enviando para o GitHub...
+git push origin main
+echo Concluido!
+pause 

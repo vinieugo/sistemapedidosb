@@ -1,0 +1,86 @@
+COMANDOS DE MANUTENÇÃO DO SISTEMA
+================================
+
+1. INICIAR O SISTEMA
+-------------------
+.\start_pm2.bat
+- Instala todas as dependências
+- Constrói o frontend
+- Inicia o backend e frontend
+
+2. VER STATUS DOS SERVIÇOS
+-------------------------
+pm2 status
+- Mostra o status de todos os serviços
+- Exibe uso de CPU e memória
+- Indica se os serviços estão online ou com erro
+
+3. VER LOGS DOS SERVIÇOS
+-----------------------
+pm2 logs
+- Mostra logs em tempo real de todos os serviços
+
+pm2 logs sistema-pedidos-backend
+- Mostra logs apenas do backend
+
+pm2 logs sistema-pedidos-frontend
+- Mostra logs apenas do frontend
+
+4. PARAR OS SERVIÇOS
+-------------------
+pm2 stop all
+- Para todos os serviços temporariamente
+- Os serviços podem ser reiniciados com 'pm2 start all'
+
+pm2 delete all
+- Remove todos os serviços do PM2
+- Use este comando antes de executar start_pm2.bat novamente
+
+5. REINICIAR OS SERVIÇOS
+-----------------------
+pm2 restart all
+- Reinicia todos os serviços
+
+pm2 restart sistema-pedidos-backend
+- Reinicia apenas o backend
+
+pm2 restart sistema-pedidos-frontend
+- Reinicia apenas o frontend
+
+6. MONITORAMENTO
+---------------
+pm2 monit
+- Abre o monitor interativo do PM2
+- Mostra uso de CPU, memória e logs em tempo real
+
+7. SALVAR CONFIGURAÇÃO
+--------------------
+pm2 save
+- Salva a lista atual de processos
+- Útil para restaurar os serviços após reiniciar o servidor
+
+8. RESTAURAR CONFIGURAÇÃO
+-----------------------
+pm2 resurrect
+- Restaura os serviços salvos anteriormente
+
+9. LIMPAR LOGS
+------------
+pm2 flush
+- Limpa todos os logs dos serviços
+
+10. VER INFORMAÇÕES DETALHADAS
+----------------------------
+pm2 show sistema-pedidos-backend
+- Mostra informações detalhadas do backend
+
+pm2 show sistema-pedidos-frontend
+- Mostra informações detalhadas do frontend
+
+NOTAS IMPORTANTES:
+-----------------
+1. Sempre use o comando 'pm2 delete all' antes de executar 'start_pm2.bat' novamente
+2. Se houver problemas com o backend, verifique os logs com 'pm2 logs sistema-pedidos-backend'
+3. Se houver problemas com o frontend, verifique os logs com 'pm2 logs sistema-pedidos-frontend'
+4. Use 'pm2 monit' para monitorar o sistema em tempo real
+5. Em caso de problemas, tente reiniciar os serviços com 'pm2 restart all' 
